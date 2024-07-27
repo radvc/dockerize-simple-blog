@@ -4,7 +4,7 @@ RUN apt-get update \
     zlib1g-dev \
     libzip-dev \
     git
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip pdo pdo_mysql
 WORKDIR /api
 COPY . /api
 
