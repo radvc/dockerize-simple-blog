@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: ./blog-frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./blog-frontend:/app
+    ports:
+      - 3000:3000
+  api:
+    build:
+      context: ./blog-api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /api/vendor
+      - ./blog-api:/api
+    ports:
+      - 8000:8000
