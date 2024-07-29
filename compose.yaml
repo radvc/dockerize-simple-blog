@@ -25,4 +25,5 @@ services:
       MYSQL_DATABASE: blog_app
     volumes:
       - ./database:/var/lib/mysql
-
+  redis:
+    image: redis
