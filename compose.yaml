@@ -27,3 +27,9 @@ services:
       - ./database:/var/lib/mysql
   redis:
     image: redis
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports:
+      - 80:80
