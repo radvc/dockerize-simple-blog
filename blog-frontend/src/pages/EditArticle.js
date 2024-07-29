@@ -12,7 +12,7 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/posts/${id}`).then(function (response){
+        axios.get(`/api/posts/${id}`).then(function (response){
             const { data } = response; 
             setFormData({...formData, title: data.title, body: data.body, author: data.author});
         });
@@ -25,7 +25,7 @@ function Home() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.patch(`http://127.0.0.1:8000/api/posts/${id}/update`, formData).then(response => {
+        axios.patch(`/api/posts/${id}/update`, formData).then(response => {
             console.log(response);
             navigate(`/show/${id}`);
         });   

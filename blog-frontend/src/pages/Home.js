@@ -7,7 +7,7 @@ function Home() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/posts').then(function (response){
+        axios.get('/api/posts').then(function (response){
             const { data } = response; 
             setArticles(data);
         });

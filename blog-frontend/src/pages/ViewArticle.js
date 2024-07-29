@@ -9,7 +9,7 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/posts/${id}`).then(function (response){
+        axios.get(`/api/posts/${id}`).then(function (response){
             console.log(response)
             const { data } = response; 
             setArticle(data);
@@ -17,7 +17,7 @@ function Home() {
     }, []);
 
     function handleDelete() {
-        axios.delete(`http://127.0.0.1:8000/api/posts/${id}/delete`).then(function(response) {
+        axios.delete(`/api/posts/${id}/delete`).then(function(response) {
             console.log(response);
             navigate('/');
         });

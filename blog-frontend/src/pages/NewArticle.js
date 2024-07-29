@@ -19,7 +19,7 @@ function Home() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`http://127.0.0.1:8000/api/posts/`, formData).then(response => {
+        axios.post(`/api/posts/`, formData).then(response => {
             const { data: { id } } = response;
             navigate(`/show/${id}`);
         });   
